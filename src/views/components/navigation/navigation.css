@@ -63,3 +63,23 @@
   bottom: 0px;
   width: 100%;
 }
+.cart-item-container{
+  margin-bottom: 10px;
+  background-color: #ececec;
+  padding: 10px;
+}
+.cart-item-container .item-title{
+  font-size: 16px;
+  font-weight: 500;
+}
+.cart-item-container .item-price{
+  font-size: 14px;
+  font-weight: 600;
+  text-align: end;
+}
+.cart-total-price{
+  border-top: 1px solid rgb(145, 145, 145);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: end;
+}

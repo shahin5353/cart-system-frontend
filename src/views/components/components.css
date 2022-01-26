@@ -49,13 +49,14 @@
     background-color: #2B2A7A;
 }
 
-.login-form h3{
+.login-form h2{
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;
     color: #27267D;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Poppins', sans-serif!important;
+    text-transform: uppercase;
 }
 .login-form h4{
     font-weight: 500;
@@ -66,10 +67,7 @@
     color: #6A6A6A;
     font-size:14px;
 }
-.login-form .ant-checkbox-inner{
-    border-radius: 3px!important;
-    border-color: #676767!important;
-}
+
 .login-form .ant-input-affix-wrapper{
     border-radius: 5px!important;
 }
@@ -83,33 +81,4 @@
     .centered-block {
         padding-top: 0px;
     }
-}
-.centered-block img{
-    height: 100px;
-}
-
-.custom-green-button button{
-    background: #25A264;
-    border-color: #25A264;
-    border-radius: 4px;
-    color: #FFF;
-    height: 35px;
-    font-size: 14px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.custom-green-button button:hover {
-    background: #25A264;
-    border-color: #25A264;
-    color: #FFF;
-}
-.custom-green-button button:active {
-    background: #25A264;
-    border-color: #25A264;
-    color: #FFF;
-}
-.custom-green-button button:focus{
-    background: #25A264;
-    border-color: #25A264;
-    color: #FFF;
 }

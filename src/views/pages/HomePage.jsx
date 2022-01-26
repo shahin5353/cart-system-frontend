@@ -12,20 +12,29 @@ import ProductCard from "../components/misc/card/ProductCard";
 import { Col, Row } from 'antd';
 import CartAction from "../../stores/cart/CartAction";
 import ReqGetCart from "../../stores/cart/request/ReqGetCart";
+import { selectFinished } from "../../stores/special/finished/FinishedSelector";
 
 const HomePage = (props) => {
   const userDetails = useSelector((state) => makeSelectUserDetails(state));
   const productList = useSelector((state) => makeSelectProductList(state));
-  console.log("P", productList);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(ProductAction._requestGetAllProduct(new ReqGetAllProduct()));
   }, []);
+  const isFinishedAddToCart = useSelector((state) =>
+    selectFinished(state, CartAction.REQUEST_ADD_TO_CART)
+  );
+  const isFinishedRemoveFromCart = useSelector((state) =>
+    selectFinished(state, CartAction.REQUEST_REMOVE_FROM_CART)
+  );
+  const isFinishedResetFromCart = useSelector((state) =>
+  selectFinished(state, CartAction.REQUEST_RESET_CART)
+);
   useEffect(() => {
     if(userDetails.jwtToken){
       dispatch(CartAction._requestGetCart(new ReqGetCart()));
     }
-  }, [userDetails]);
+  }, [userDetails,isFinishedAddToCart,isFinishedRemoveFromCart,isFinishedResetFromCart]);
   return (
     <>
       <div className="page-basic-container">
@@ -33,8 +42,8 @@ const HomePage = (props) => {
         <div className="product-container">
           <Row gutter={16}>
             {
-              productList.map(product => (
-                <Col span={8}>
+              productList && productList.map(product => (
+              <Col key={product.id} xl={{span:8}} lg={{span:12}} md={{span:24}} style={{marginBottom:'20px'}}>
                 <ProductCard data={product} />
               </Col>
               ))

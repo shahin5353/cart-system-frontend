@@ -33,9 +33,6 @@ import AlertTemplate from 'react-alert-template-basic';
         <AlertProvider template={AlertTemplate} {...options}>
           <Provider store={store.store}>
             <Component history={history} dispatch={store.dispatch} />
-            {/* <PersistGate loading={null} persistor={store.persistor}>
-            <Component history={history} dispatch={store.dispatch} />
-          </PersistGate> */}
           </Provider>
         </AlertProvider>
 

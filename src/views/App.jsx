@@ -1,9 +1,7 @@
 import React from "react";
-import "./pages/AntOverwrite.css";
 import "./components/components.css";
 import { Switch } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
-import ModalMessage from "./modals/ModalMessage";
 import Toasts from "./components/toasts/Toasts";
 import { AppRoutes } from "../assets/constants/routes";
 import PrivateRoute from "./components/auth/PrivateRoute";
@@ -18,7 +16,6 @@ function App(props) {
     <ConnectedRouter history={props.history}>
       <ErrorBoundary>
         <div id="cover-spin"></div>
-        <ModalMessage />
         <Toasts />
         <Switch>
           <PublicRoute
@@ -27,22 +24,11 @@ function App(props) {
             path={AppRoutes.LOGIN}
             component={() => <LoginPage />}
           />
-           <PublicRoute
-            exact
-            restricted={true}
-            path={AppRoutes.REGISTER}
-            component={() => <LoginPage />}
-          />
-          <PublicRoute
+          <PrivateRoute
             exact
             path={AppRoutes.DEFAULT}
             component={() => <HomePage />}
           />
-          {/* <PrivateRoute
-            exact
-            path={AppRoutes.CHECKOUT}
-            component={() => <SaveBloodSamplesPage />}
-          /> */}
           <PrivateRoute exact path="*" component={() => <NotFoundPage />} />
         </Switch>
       </ErrorBoundary>

@@ -29,10 +29,8 @@ const LoginPage = (props) => {
   return (
     <div className="login-container">
       <div className="login-form">
-        <div className="centered-block ">
-          <img src="images/nib-logo.png" alt="nib-logo" />
-          <h3>National Institute of Biotechnology</h3>
-          <h5>Data Entry Platform: HMGCR GENE SNP Analysis</h5>
+        <div className="centered-block">
+          <h2>Cart System</h2>
         </div>
         <Form onFinish={onFinish} validateTrigger={"onBlur"}>
           <h4 style={{textAlign:'center'}}>Enter your credentials to login</h4>

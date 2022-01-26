@@ -1,4 +1,3 @@
-import moment from "moment"
 
 export const setCookie = (cname, cvalue, exdays) => {
     var d = new Date()
