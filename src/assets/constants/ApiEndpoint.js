@@ -1,9 +1,7 @@
 
 
 export class ApiEndpoint {
-    // static BASE_ENDPOINT = "http://192.168.0.99:4000/api/v1";
     static BASE_ENDPOINT = "http://localhost:4000/api/v1";
-    // static BASE_ENDPOINT = "http://192.168.0.20:443/api/v1";
 
     static user = {
         getUserDetails : `${ApiEndpoint.BASE_ENDPOINT}/user/getUserDetails` ,
